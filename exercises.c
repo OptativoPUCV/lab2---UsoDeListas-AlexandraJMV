@@ -104,6 +104,7 @@ void copia_pila(Stack* P1, Stack* P2) {
 		push(P3, item);
 		item = pop(P1);
 	}
+	imprime_y_vacia_pila(P3);
 
 	item = top(P3);
 	
