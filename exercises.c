@@ -98,18 +98,16 @@ Puedes usar una pila auxiliar.
 
 void copia_pila(Stack* P1, Stack* P2) {
 	Stack* P3 = create_stack();
-	int * item = top(P1);
-	imprime_y_vacia_pila(P3);
-
-
+	
+	int * item = pop(P1);
 	while (item != NULL){
 		push(P3, item);
 		item = pop(P1);
 	}
+	
 	imprime_y_vacia_pila(P3);
 
 	item = top(P3);
-	
 	while(item != NULL){
 		push(P2, item);
 		push(P1, item);
