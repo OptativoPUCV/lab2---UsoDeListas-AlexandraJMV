@@ -82,11 +82,9 @@ void eliminaElementos(List*L, int elem){
 	int * item = first(L);
 	
 	while (item != NULL){
-
 		if (*item == elem){
 			popCurrent(L);
-		}
-		
+		}	
 		item = next(L);
 	}
 }
@@ -99,6 +97,23 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
+	Stack* P3 = create_stack();
+	int * item = top(P1);
+
+	while (item != NULL){
+		push(P3, item);
+		item = pop(P1);
+	}
+
+	item = top(P3);
+	
+	while(item != NULL){
+		push(P2, item);
+		push(P1, item);
+		
+		item = pop(P3);
+	}
+	
 }
 
 /*
